@@ -16,18 +16,22 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    bigbug.cpp \
     bullet.cpp \
     cplusplus.cpp \
     main.cpp \
     mainwindow.cpp \
+    midbug.cpp \
     r.cpp \
     smallbug.cpp \
     welcome.cpp
 
 HEADERS += \
+    bigbug.h \
     bullet.h \
     cplusplus.h \
     mainwindow.h \
+    midbug.h \
     r.h \
     smallbug.h \
     welcome.h
@@ -43,3 +47,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 RESOURCES += \
     resource.qrc
+
+DISTFILES += \
+    README.txt

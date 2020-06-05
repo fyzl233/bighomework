@@ -18,12 +18,13 @@ class Mainwindow : public QMainWindow
 public:
     explicit Mainwindow(QWidget *parent = nullptr);
     ~Mainwindow();
+    int timerId;
+    static int getdelay();
 protected:
     void paintEvent(QPaintEvent *);
     void mousePressEvent(QMouseEvent *event);
     void timerEvent(QTimerEvent *e);
 private:
-    int timerId;
     static const int DELAY = 40;//25帧的游戏
     Ui::Mainwindow *ui;//ui设计指针
     QPushButton Buttons[28][2];//升级防御塔、拆除防御塔的控件存储

@@ -32,14 +32,17 @@ Mainwindow::Mainwindow(QWidget *parent) : QMainWindow(parent),ui(new Ui::Mainwin
     }//升级按钮与拆除按钮的初始化
     for(i=0;i<=27;i++)
     {
+        rs[i].num = i;
         rs[i].setx(space[i][0]);
         rs[i].sety(space[i][1]);
+        rs[i].setrow(space[i][1]/120);
         rs[i].setParent(this);
         rs[i].setGeometry(QRect(0,0,1280,720));
         rs[i].close();
     }//R防御塔的初始化
     for(i=0;i<=27;i++)
     {
+        cs[i].num = i;
         cs[i].setx(space[i][0]);
         cs[i].sety(space[i][1]);
         cs[i].setrow(space[i][1]/120);
@@ -48,12 +51,16 @@ Mainwindow::Mainwindow(QWidget *parent) : QMainWindow(parent),ui(new Ui::Mainwin
         cs[i].close();
     }//C++防御塔的初始化
     ui->setupUi(this);
-    timerId = startTimer(DELAY);
 }
 
 Mainwindow::~Mainwindow()
 {
     delete ui;
+}
+
+int Mainwindow::getdelay()
+{
+    return DELAY;
 }
 
 void Mainwindow::paintEvent(QPaintEvent *)
@@ -99,14 +106,14 @@ void Mainwindow::mousePressEvent(QMouseEvent *event)
             {
                 if(x>=space[i][0]-55&&x<=space[i][0]+55&&y>=space[i][1]-55&&y<=space[i][1]+55)
                 {
-                    if(mousestatus==1)
+                    if(mousestatus==1&&spacestatus[i]==0)
                     {
                         rs[i].show();
                         defenders.push_back(rs+i);
                         spacestatus[i]=1;
                         break;
                     }
-                    if(mousestatus==2)
+                    if(mousestatus==2&&spacestatus[i]==0)
                     {
                         cs[i].show();
                         defenders.push_back(cs+i);
@@ -130,7 +137,20 @@ void Mainwindow::timerEvent(QTimerEvent *e)
 
     Q_UNUSED(e);
     time = time + 1;
-
+    if(time%550==0)//创造大bug
+    {
+        attackers.push_back(new Bigbug(1200,((time+1)%3+2)*120+40,200+round*50));
+        attackers[attackers.length()-1]->setParent(this);
+        attackers[attackers.length()-1]->show();
+        attackers[attackers.length()-1]->stackUnder(this);
+    }
+    if(time%100==0)//创造中bug
+    {
+        attackers.push_back(new Midbug(1200,((time+1)%3+2)*120+40,150+round*35));
+        attackers[attackers.length()-1]->setParent(this);
+        attackers[attackers.length()-1]->show();
+        attackers[attackers.length()-1]->stackUnder(this);
+    }
     if(time%40==0)//创造小bug
     {
         attackers.push_back(new Smallbug(1200,(time%3+2)*120+40,100+round*20));
@@ -206,11 +226,14 @@ void Mainwindow::timerEvent(QTimerEvent *e)
     {
         if(defenders[i]->getHP()<=0||defenders[i]->getx()>1300)
         {
-            defenders[i]->setHP(100);
+            if(defenders[i]->getsign()==0||defenders[i]->getsign()==1)
+            {
+                defenders[i]->setHP(100);
+                spacestatus[defenders[i]->num] = 0;
+            }
             defenders[i]->close();
             defenders.remove(i);
             dfnum = dfnum - 1;
-            spacestatus[i]=0;
             i = i - 1;
         }
     }
@@ -219,6 +242,16 @@ void Mainwindow::timerEvent(QTimerEvent *e)
         attackers[i]->move();
         if(attackers[i]->getHP()<=0)
         {
+            if(attackers[i]->getsign()==2)//如果是大bug，则创建三个小bug
+            {
+                int m;
+                for(m=-1;m<=1;m++)
+                {
+                    attackers.push_back(new Smallbug(attackers[i]->getx(),attackers[i]->gety()+120*m,100+round*20));
+                    attackers[attackers.length()-1]->setParent(this);
+                    attackers[attackers.length()-1]->show();
+                }
+            }
             attackers[i]->close();
             attackers.remove(i);
             atnum = atnum -1;

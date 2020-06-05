@@ -19,4 +19,5 @@ Welcome::~Welcome()
 void Welcome::on_Startbutton_clicked()
 {
     Game->show();//ui文件中实现了Welcome窗口的关闭
+    Game->timerId = Game->startTimer(Game->getdelay());
 }

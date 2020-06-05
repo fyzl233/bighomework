@@ -9,16 +9,17 @@ class Smallbug : public QWidget
 public:
     explicit Smallbug(QWidget *parent = nullptr);
     void move();
-    void distanceattack(R &a);
-    void paintEvent(QPaintEvent *);
+    virtual void distanceattack(R &a);//虚函数
     Smallbug(int _x,int _y,int _HP);
     friend R;
     friend Bullet;
     int getHP();
     int getx();
+    int gety();
     int getsign();
     int getrow();
 protected:
+    void paintEvent(QPaintEvent *);
     int sign;//标记bug的种类,0代表小bug，1代表中bug，2代表大bug
     int HP;//血量
     int row;//bug所处的行数

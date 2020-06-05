@@ -27,7 +27,7 @@ void R::distanceattack(Smallbug &a)
 {
     if(sqrt((a.x-x)*(a.x-x)+(a.y-y)*(a.y-y))<125+25*level)
     {
-        a.HP = a.HP - 0.5*level;
+        a.HP = a.HP - level;
     }
 }
 
@@ -59,4 +59,14 @@ int R::getx()
 int R::getsign()
 {
     return sign;
+}
+
+int R::getrow()
+{
+    return row;
+}
+
+void R::setrow(int _row)
+{
+    row = _row;
 }

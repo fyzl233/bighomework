@@ -56,3 +56,8 @@ int Smallbug::getrow()
 {
     return row;
 }
+
+int Smallbug::gety()
+{
+    return y;
+}

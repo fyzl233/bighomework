@@ -25,13 +25,5 @@ Bullet* Cplusplus::firebullet()
     return new Bullet(x+60,y);
 }
 
-int Cplusplus::getrow()
-{
-    return row;
-}
 
-void Cplusplus::setrow(int _row)
-{
-    row = _row;
-}
 
