@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/pictures">
+        <file>pictures/bigbug.png</file>
+        <file>pictures/C++.png</file>
+        <file>pictures/map1.jpg</file>
+        <file>pictures/map2.jpg</file>
+        <file>pictures/middlebug.png</file>
+        <file>pictures/python.png</file>
+        <file>pictures/R.png</file>
+        <file>pictures/smallbug.png</file>
+    </qresource>
+</RCC>
