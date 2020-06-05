@@ -31,8 +31,9 @@ void Bullet::move()
 
 void Bullet::distanceattack(Smallbug &a)
 {
-    if(sqrt((a.x-x)*(a.x-x)+(a.y-y)*(a.y-y))<20)
+    if(sqrt((a.x-x)*(a.x-x)+(a.y-y)*(a.y-y))<=20)
     {
+        qDebug()<<x;
         a.HP = a.HP - 50;
         HP = HP - HP;
     }

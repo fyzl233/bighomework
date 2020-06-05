@@ -8,5 +8,6 @@
         <file>pictures/python.png</file>
         <file>pictures/R.png</file>
         <file>pictures/smallbug.png</file>
+        <file>pictures/bullet.png</file>
     </qresource>
 </RCC>

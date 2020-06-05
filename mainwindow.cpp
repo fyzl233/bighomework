@@ -178,6 +178,7 @@ void Mainwindow::timerEvent(QTimerEvent *e)
                         Bullet* temp = dynamic_cast<Bullet*>(defenders[defenders.length()-1]);
                         temp->setParent(this);
                         temp->show();
+                        break;
                     }
                 }
             }

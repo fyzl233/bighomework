@@ -18,7 +18,6 @@ Smallbug::Smallbug(int _x,int _y,int _HP):HP(_HP),x(_x),y(_y)
 
 void Smallbug::paintEvent(QPaintEvent *)
 {
-    //qDebug()<<HP;
     QPainter painter(this);
     QPixmap Pixmap("./pictures/smallbug.png");
     painter.drawPixmap(x-65,y-147,131,94,Pixmap);
