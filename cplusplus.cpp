@@ -1,5 +1,6 @@
 #include "cplusplus.h"
 #include <QPainter>
+#include <QDebug>
 
 Cplusplus::Cplusplus()
 {
