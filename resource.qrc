@@ -9,5 +9,11 @@
         <file>pictures/smallbug.png</file>
         <file>pictures/bullet.png</file>
         <file>pictures/midbug.png</file>
+        <file>pictures/purplebug.png</file>
+        <file>pictures/cplusplus2.png</file>
+        <file>pictures/cplusplus3.png</file>
+        <file>pictures/slowbigbug.png</file>
+        <file>pictures/slowmidbug.png</file>
+        <file>pictures/slowsmallbug.png</file>
     </qresource>
 </RCC>

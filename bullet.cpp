@@ -6,14 +6,17 @@
 
 Bullet::Bullet()
 {
-
     sign = 2;
 }
 
 Bullet::Bullet(int _x,int _y):R(_x,_y)
 {
     sign = 2;
+    num = -1;
+    row = y/120;
     this->setGeometry(QRect(0,100,1280,620));
+    setAttribute(Qt::WA_DeleteOnClose);
+    HP = 1000000;
 }
 
 void Bullet::paintEvent(QPaintEvent *)
@@ -33,7 +36,6 @@ void Bullet::distanceattack(Smallbug &a)
 {
     if(sqrt((a.x-x)*(a.x-x)+(a.y-y)*(a.y-y))<=20)
     {
-        qDebug()<<x;
         a.HP = a.HP - 50;
         HP = HP - HP;
     }

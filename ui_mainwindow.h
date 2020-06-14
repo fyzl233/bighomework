@@ -28,6 +28,7 @@ public:
     QPushButton *pushButton_2;
     QLabel *label;
     QLabel *label_2;
+    QPushButton *pushButton_3;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -56,6 +57,9 @@ public:
         label_2->setObjectName(QString::fromUtf8("label_2"));
         label_2->setGeometry(QRect(80, 20, 68, 41));
         label_2->setFont(font);
+        pushButton_3 = new QPushButton(centralwidget);
+        pushButton_3->setObjectName(QString::fromUtf8("pushButton_3"));
+        pushButton_3->setGeometry(QRect(1130, 30, 121, 41));
         Mainwindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(Mainwindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -77,6 +81,7 @@ public:
         pushButton_2->setText(QCoreApplication::translate("Mainwindow", "\345\273\272\351\200\240\342\200\234R\342\200\235\351\230\262\345\276\241\345\241\224\357\274\210\357\277\2450\357\274\211", nullptr));
         label->setText(QCoreApplication::translate("Mainwindow", "HP:", nullptr));
         label_2->setText(QCoreApplication::translate("Mainwindow", "100", nullptr));
+        pushButton_3->setText(QCoreApplication::translate("Mainwindow", "\346\232\202\345\201\234/\347\273\247\347\273\255", nullptr));
     } // retranslateUi
 
 };

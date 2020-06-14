@@ -3,16 +3,20 @@
 #include <QWidget>
 class Bullet;
 class R;
+class Pinkbullet;
+class Explosion;
 class Smallbug : public QWidget
 {
     Q_OBJECT
 public:
     explicit Smallbug(QWidget *parent = nullptr);
-    void move();
+    virtual void move();
     virtual void distanceattack(R &a);//虚函数
-    Smallbug(int _x,int _y,int _HP);
+    Smallbug(int _x,int _y,int _HP,int _num);
     friend R;
     friend Bullet;
+    friend Pinkbullet;
+    friend Explosion;
     int getHP();
     int getx();
     int gety();
@@ -25,6 +29,9 @@ protected:
     int row;//bug所处的行数
     int x;//bug所处的横坐标
     int y;//bug所处的纵坐标
+    int MAXHP;//血量上限
+    int num;//编号
+    bool slow = 0;//是否被减速
 signals:
 
 };

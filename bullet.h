@@ -11,7 +11,7 @@ public:
     Bullet();
     Bullet(int _x,int _y);
     void move();
-    void distanceattack(Smallbug &a);
+    virtual void distanceattack(Smallbug &a);
 
     friend Smallbug;
 

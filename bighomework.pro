@@ -19,9 +19,12 @@ SOURCES += \
     bigbug.cpp \
     bullet.cpp \
     cplusplus.cpp \
+    explosion.cpp \
     main.cpp \
     mainwindow.cpp \
     midbug.cpp \
+    pinkbullet.cpp \
+    purplebug.cpp \
     r.cpp \
     smallbug.cpp \
     welcome.cpp
@@ -30,8 +33,11 @@ HEADERS += \
     bigbug.h \
     bullet.h \
     cplusplus.h \
+    explosion.h \
     mainwindow.h \
     midbug.h \
+    pinkbullet.h \
+    purplebug.h \
     r.h \
     smallbug.h \
     welcome.h

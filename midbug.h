@@ -8,7 +8,7 @@ class Midbug:public Smallbug
 {
 public:
     Midbug();
-    Midbug(int _x,int _y,int _HP);
+    Midbug(int _x,int _y,int _HP,int _num);
     void distanceattack(R &a);
 protected:
     void paintEvent(QPaintEvent *);

@@ -7,7 +7,7 @@ class Bigbug:public Midbug
 {
 public:
     Bigbug();
-    Bigbug(int _x,int _y,int _HP);
+    Bigbug(int _x,int _y,int _HP,int _num);
     void distanceattack(R &a);
 protected:
     void paintEvent(QPaintEvent *);

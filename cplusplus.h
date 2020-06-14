@@ -12,6 +12,7 @@ public:
     Cplusplus(int _x,int _y);
     void paintEvent(QPaintEvent *);
     Bullet* firebullet();
+
 };
 
 #endif // CPLUSPLUS_H

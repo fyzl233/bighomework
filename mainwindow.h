@@ -7,6 +7,8 @@
 #include <QPushButton>
 #include <QVector>
 #include <cplusplus.h>
+#include <pinkbullet.h>
+#include <explosion.h>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Mainwindow; }
@@ -39,12 +41,20 @@ private:
     int round = 1;//游戏轮数
     int time = 0;//用来记录一下时间，现实时间过去一秒，time就增加25
     int HP = 100;//玩家的血量，玩家的血量小于等于0时，判负（还未实现）
+    int whichmap = 1;//标记目前处于哪一张地图
+    bool test = 1;//用于测试
+    int totalatnum = 0;//已经出现的敌人总数量
+    QWidget blank;//空白窗口，用于搞一些事情
+    bool pause = 0;//是否处于暂停状态
+    int begin = 2;//迭代初值，第一张地图为2，第二张地图为0
+    int end = 25;//迭代结束值，第一张地图为25，第二张地图为27
 signals:
 
 
 private slots:
     void on_pushButton_2_clicked();
     void on_pushButton_clicked();
+    void on_pushButton_3_clicked();
 };
 
 #endif // MAINWINDOW_H
