@@ -74,7 +74,7 @@ void Purplebug::up()
     row = row-1;
     remain = 60;//向上移动60次
     direction = -1;
-    changerowCD = 90;//设置换行冷却时间
+    changerowCD = 70;//设置换行冷却时间
 }
 
 void Purplebug::down()
@@ -82,7 +82,7 @@ void Purplebug::down()
     row = row+1;
     remain = 60;//向下移动60次
     direction = 1;
-    changerowCD = 90;//设置换行冷却时间
+    changerowCD = 70;//设置换行冷却时间
 }
 
 void Purplebug::move()

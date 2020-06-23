@@ -21,17 +21,18 @@ public:
     friend Purplebug;
     void setx(int x);
     void sety(int y);
-    int getHP();
+    void setrow(int _row);
     void setHP(int _HP);
+    void setlevel(int level);
+    void levelup();
+    void reset();
+    int getHP();
     int getx();
     int gety();
     int getsign();
     int getrow();
-    void setrow(int _row);
-    int num = 0;//防御塔所处的标号
-    void levelup();
     int getlevel();
-    void setlevel(int level);
+    int num = 0;//防御塔所处的标号
 protected:
     int row;
     int sign;/*标记防御塔种类，0为R防御塔，1为C++防御塔，2为C++防御塔射出的子弹，视为一个防御塔，3代表C++射出的紫色子弹，
@@ -40,6 +41,7 @@ protected:
     int x;int y; //坐标
     int level = 1; //防御塔等级
     int MAXHP = 100;
+    bool active = 1;
 signals:
 
 };

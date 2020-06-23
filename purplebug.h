@@ -17,7 +17,7 @@ public:
     void down();
 protected:
     void paintEvent(QPaintEvent *);
-    int changerowCD = 50;//换行的冷却时间，不让它一直换行
+    int changerowCD = 40;//换行的冷却时间，不让它一直换行
     int remain = 0;//标记还要走的步数
     int direction = 0;//标记行走方向
 };

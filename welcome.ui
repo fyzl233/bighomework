@@ -17,8 +17,8 @@
    <widget class="QPushButton" name="Startbutton">
     <property name="geometry">
      <rect>
-      <x>550</x>
-      <y>480</y>
+      <x>570</x>
+      <y>470</y>
       <width>120</width>
       <height>45</height>
      </rect>
@@ -27,6 +27,24 @@
      <string>开始游戏</string>
     </property>
    </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1280</width>
+      <height>720</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="resource.qrc">:/pictures/pictures/welcome.jpg</pixmap>
+    </property>
+   </widget>
+   <zorder>label</zorder>
+   <zorder>Startbutton</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -40,7 +58,9 @@
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <resources/>
+ <resources>
+  <include location="resource.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>Startbutton</sender>

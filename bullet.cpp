@@ -34,9 +34,9 @@ void Bullet::move()
 
 void Bullet::distanceattack(Smallbug &a)
 {
-    if(sqrt((a.x-x)*(a.x-x)+(a.y-y)*(a.y-y))<=20)
+    if(HP>0&&sqrt((a.x-x)*(a.x-x)+(a.y-y)*(a.y-y))<=20)
     {
-        a.HP = a.HP - 50;
+        a.HP = a.HP - 40;
         HP = HP - HP;
     }
 }

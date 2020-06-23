@@ -28,12 +28,12 @@ void R::paintEvent(QPaintEvent *)
     }
     else if(level==2)
     {
-        painter.setPen(QPen(skyblue,8,Qt::SolidLine));
+        painter.setPen(QPen(skyblue,4,Qt::SolidLine));
         painter.drawEllipse(x-175,y-175,350,350);
     }
     else
     {
-        painter.setPen(QPen(skyblue,12,Qt::SolidLine));
+        painter.setPen(QPen(skyblue,4,Qt::SolidLine));
         painter.drawEllipse(x-200,y-200,400,400);
         painter.setPen(QPen(springgreen,4,Qt::SolidLine));
         painter.drawEllipse(x-125,y-125,250,250);
@@ -129,6 +129,11 @@ void R::setrow(int _row)
 void R::levelup()
 {
     level++;
+    if(sign==0)//如果是R防御塔，提升血量和血量上限
+    {
+        MAXHP = MAXHP + 100;
+        HP = HP + 100;
+    }
 }
 
 int R::getlevel()
@@ -144,4 +149,11 @@ int R::gety()
 void R::setlevel(int level)
 {
     this->level=level;
+}
+
+void R::reset()
+{
+    level = 1;
+    MAXHP = 100;
+    HP = 100;
 }

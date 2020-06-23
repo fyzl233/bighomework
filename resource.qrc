@@ -15,5 +15,18 @@
         <file>pictures/slowbigbug.png</file>
         <file>pictures/slowmidbug.png</file>
         <file>pictures/slowsmallbug.png</file>
+        <file>pictures/pinkbullet.png</file>
+        <file>pictures/game_over.jpg</file>
+        <file>pictures/victory.jpg</file>
+        <file>pictures/welcome.jpg</file>
+    </qresource>
+    <qresource prefix="/music">
+        <file>music1.mp3</file>
+        <file>music2.mp3</file>
+        <file>music3.mp3</file>
+        <file>music4.mp3</file>
+    </qresource>
+    <qresource prefix="/data">
+        <file>attackerdata.txt</file>
     </qresource>
 </RCC>

@@ -32,11 +32,10 @@ void Explosion::distanceattack(Smallbug &a)
 {
     if(nums.contains(a.num)==0)
     {
-        qDebug()<<radius;
-        if(sqrt((a.x-x)*(a.x-x)+(a.y-y)*(a.y-y))>=radius-15
-                &&sqrt((a.x-x)*(a.x-x)+(a.y-y)*(a.y-y))<=radius+15)
+        if(sqrt((a.x-x)*(a.x-x)+(a.y-y)*(a.y-y))>=radius-18
+                &&sqrt((a.x-x)*(a.x-x)+(a.y-y)*(a.y-y))<=radius+18)
         {
-            a.HP=a.HP-100;
+            a.HP=a.HP-80;
             nums.push_back(a.num);
         }
     }
