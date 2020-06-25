@@ -10,11 +10,9 @@ class Bullet:public R
 public:
     Bullet();
     Bullet(int _x,int _y);
-    void move();
     virtual void distanceattack(Smallbug &a);
-
+    void move();
     friend Smallbug;
-
 protected:
     void paintEvent(QPaintEvent *);
 };

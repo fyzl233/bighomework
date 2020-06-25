@@ -5,10 +5,9 @@
 #include "QPushButton"
 #include <QDebug>
 #include <fstream>
-//#include "ui_mainwindow.h"
 using namespace std;
 
-Mainwindow::Mainwindow(QWidget *parent) : QMainWindow(parent)//,ui(new Ui::Mainwindow)
+Mainwindow::Mainwindow(QWidget *parent) : QMainWindow(parent)
 {
     this->resize(1280, 720);
     this->setWindowTitle("Game");
@@ -29,7 +28,6 @@ Mainwindow::Mainwindow(QWidget *parent) : QMainWindow(parent)//,ui(new Ui::Mainw
         Data[datai][0]=-1;
         qDebug()<<"读取文件失败！";
     }
-    qDebug()<<dataMax;
     label.setGeometry(670,30,451,31);
     label.setText("点击左边的按钮建立防御塔，抵挡bug大军的攻击吧！");
     label.setParent(this);
@@ -91,7 +89,6 @@ Mainwindow::Mainwindow(QWidget *parent) : QMainWindow(parent)//,ui(new Ui::Mainw
     playlist_lose->setCurrentIndex(1);
     musicplayer_lose->setPlaylist(playlist_lose);
     musicplayer_lose->setVolume(30) ;
-    //playlist->setPlaybackMode(QMediaPlaylist::CurrentItemInLoop);
     finalbutton.setParent(this);
     finalbutton.setGeometry(QRect(538,575,120,45));
     finalbutton.setText(QString::fromUtf8("退出游戏"));
@@ -161,12 +158,16 @@ Mainwindow::Mainwindow(QWidget *parent) : QMainWindow(parent)//,ui(new Ui::Mainw
         }
     });
     phasebutton.raise();
-    //ui->setupUi(this);
 }
 
 Mainwindow::~Mainwindow()
 {
-    //delete ui;
+    delete musicplayer_main;
+    delete musicplayer_win;
+    delete musicplayer_lose;
+    delete playlist_main;
+    delete playlist_win;
+    delete playlist_lose;
 }
 
 int Mainwindow::getdelay()
@@ -274,6 +275,7 @@ void Mainwindow::mousePressEvent(QMouseEvent *event)
                     Buttons[i][0].show();
                     Buttons[i][0].stackUnder(&blank);//将升级控件依附在空白窗口之下，可以覆盖血条
                     Buttons[i][1].show();
+                    Buttons[i][1].stackUnder(&blank);
                     mousestatus = 3;
                     mouseflag = i;//记录好哪一个升级、拆除窗口被打开
                     break;

@@ -14,7 +14,7 @@ Welcome::Welcome(QWidget *parent)
 Welcome::~Welcome()
 {
     delete ui;
-
+    delete Game;
 }
 
 void Welcome::on_Startbutton_clicked()

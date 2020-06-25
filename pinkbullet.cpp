@@ -17,9 +17,6 @@ void Pinkbullet::paintEvent(QPaintEvent *)
     QPixmap Pixmap("./pictures/pinkbullet.png");
     painter.setClipRect(0,0,1280,720);
     painter.drawPixmap(x-37,y-136,75,73,Pixmap);
-    /*QColor pink(241,158,194);
-    painter.setPen(QPen(pink,8,Qt::SolidLine));
-    painter.drawEllipse(x-150,y-250,300,300);*/
 }
 
 

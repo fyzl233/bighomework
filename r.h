@@ -1,6 +1,5 @@
 #ifndef R_H
 #define R_H
-
 #include <QWidget>
 #include "smallbug.h"
 #include "midbug.h"
@@ -42,8 +41,6 @@ protected:
     int level = 1; //防御塔等级
     int MAXHP = 100;
     bool active = 1;
-signals:
-
 };
 
 #endif // R_H

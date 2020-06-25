@@ -12,9 +12,9 @@ public:
     Purplebug(int _x,int _y,int _HP,int _num);
     void distanceattack(R &a);
     void move();
-    int getCD();//得到换行的CD
     void up();
     void down();
+    int getCD();//得到换行的CD
 protected:
     void paintEvent(QPaintEvent *);
     int changerowCD = 40;//换行的冷却时间，不让它一直换行
