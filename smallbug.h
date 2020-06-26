@@ -32,8 +32,6 @@ protected:
     int MAXHP;//血量上限
     int num;//编号
     bool slow = 0;//是否被减速
-signals:
-
 };
 
 #endif // SMALLBUG_H

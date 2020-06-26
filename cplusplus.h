@@ -10,8 +10,9 @@ class Cplusplus:public R
 public:
     Cplusplus();
     Cplusplus(int _x,int _y);
-    void paintEvent(QPaintEvent *);
     Bullet* firebullet();
+protected:
+    void paintEvent(QPaintEvent *);
 };
 
 #endif // CPLUSPLUS_H
