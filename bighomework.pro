@@ -55,4 +55,4 @@ RESOURCES += \
     resource.qrc
 
 DISTFILES += \
-    README.txt
+    README.docx
