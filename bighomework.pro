@@ -55,4 +55,4 @@ RESOURCES += \
     resource.qrc
 
 DISTFILES += \
-    README.docx
+    大作业报告.docx
